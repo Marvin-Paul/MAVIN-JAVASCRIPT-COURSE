@@ -7,10 +7,25 @@
 </head>
 <body>
   <button>HELLO</button>
+  <button class="js-button">World</button>
   <script>
+    console.log(document.querySelector('button').innerHTML)
+    document.querySelector('button')
+    .innerHTML = 'changed';
+    const buttonElement =document.querySelector('.js-button');
+      console.log(buttonElement);
+
+ 
+    /*
+   console.log(document.title);
+   document.title = 'Bad Boy';
+
+    console.log(document.body);
+    
    document.body.innerHTML = 'Marvin';
    document.title = 'Good Boy';
-
+   */
+   
   </script>
 </body>
 </html>
