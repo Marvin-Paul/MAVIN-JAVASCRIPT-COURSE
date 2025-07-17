@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>HTML FORMS</title>
+<body bgcolor="cyan">
+<form target="blank" method="GET">
+<caption> <font color="red">PERSONAL DETAILS</font></caption>
+SURNAME:&nbsp;&nbsp<input type="text" size="30" name="surname="><br><br>
+FIRSTNAME:<input type="text" size="30" name="fistname"><br>
+<legend>PERSONAL INFORMATION:</legend>
+<label for="sname">SURNAME:</label>
+<input type="text" size="30" name="surname"><br><br>
+<label for="fname">FIRSTNAME:</label>
+<input type="text" size="30" name="firstname"><br><br>
+Password:<input type="password" size="30" name="firstname"><br><br>
+Academic Background <textarea cols="80" rows="10" name="Details">
+This is where users write what they want.</textarea><br>
+</form>
+
+Department:<br>
+<input type="checkbox" name="option1" value="computer Science">Computer Science <br>
+<input type="checkbox" name="option2" value="Software Engineering">Software Engineering <br>
+<input type="checkbox" name="option3" value="Information Technology " checked>Information Technology <br>
+<input type="checkbox" name="option4" value="computer Engineering">Computer Engineering <br><br>
+<label for="gender">Gender:</label><br>
+<input type="checkbox" name="option1" value="MALE">MALE
+<input type="checkbox" name="option1" value="FEMALE">FEMALE<br><br>
+School/College:<br>
+<input type="radio" name="option1" value="SOMAC">SOMAC<br>
+<input type="radio" name="option2" value="SOL">SOL<br>
+<input type="radio" name="option3" value="SONAS" checked>SONAS <br>
+<input type="radio" name="option4" value="CBSS">CBSS<br><br>
+
+HOBBIES:<br>
+<select id="dropdown" name="HOBBIES">
+<option value="MUSIC">MUSIC <option>
+<option value="MOVIES">MOVIES <option>
+<option value="GAMING">GAMING <option>
+<option value="EATING">EATING<option>
+<option value="READING">READING <option>
+<option value="BASKETBALL">BASKETBALL <option>
+<option value="VOLLEYBALL">VOLLEYBALL <option>
+<option value="NETBALL">NETBALL <option>
+<option value="FOOTBALL">FOOTBALL <option>
+<Select><br><br>
+<label for="birthdate">DATE OF BIRTH</label>
+<input type="date" id="birthdate"  name="birthdate"><br>
+
+<br><br>
+<input type="submit" name="submit" value="SUBMIT">
+<input type="reset" name="reset" value="RESET">
+<input type="ok" name="ok" value="OK">
+
+
+
+
+
+</body>
+</html>
