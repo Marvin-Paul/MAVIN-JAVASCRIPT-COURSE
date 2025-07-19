@@ -4,10 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM</title>
+  <style>
+  .subscribe-button {
+    border:none;
+    background-color:black;
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:15px;
+    padding-left:15px;
+    font-weight:bold;
+    border-radius:50px;
+    cursor:pointer;
+}
+.is-subscribed{
+  background-color:grey;
+  color:black;
+
+}
+  </style>
 </head>
 <body>
-  <button>HELLO</button>
-  <button class="js-button">World</button>
+  <p>Youtube Subscribe </p>
+  <button class="js-subscribe-button subscribe-button">Subscribe</button>
 
   <p>Amazon shipping Calculatorr</p>
   <input placeholder="cost of item"
@@ -41,17 +60,24 @@ function handleCostkeydown(event){
     const buttonElement =document.querySelector('.js-button');
       console.log(buttonElement);
 
- 
-   /*
+  function subscribe(){
+    const buttonElement = document.querySelector('.js-subscribe-button');
+   if (buttonElement.innerHTML == 'Subscribe'){
+       buttonElement.innerHTML = 'Subscribed';
+       buttonElement.classList.add
+       ('is-subscribed')
+   }
+  }
+   
    console.log(document.title);
+  
    document.title = 'Bad Boy';
 
     console.log(document.body);
     
    document.body.innerHTML = 'Marvin';
    document.title = 'Good Boy';
-   */
-   
+  
   </script>
 </body>
 </html>
