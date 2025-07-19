@@ -16,34 +16,54 @@
     font-weight:bold;
     border-radius:50px;
     cursor:pointer;
+    margin-button:30px;                                                             
 }
 .is-subscribed{
   background-color:grey;
   color:black;
 
 }
+.body{
+  font-family:Arial;
+}
+.cost-input{
+  font-size:15px;
+ padding:10px;
+   
+}
+.calculate-button{
+  background-color:green;
+  color:white;
+  border:none;
+  font-size:16px;
+  padding:12px 15px;
+  cursor:pointer;
+}
   </style>
 </head>
 <body>
   <p>Youtube Subscribe </p>
-  <button class="js-subscribe-button subscribe-button">Subscribe</button>
+  <button onclick="subscribe();"
+  class="js-subscribe-button subscribe-button">Subscribe</button>
 
   <p>Amazon shipping Calculatorr</p>
   <input placeholder="cost of item"
-  class="js-cost-input"
+  class="js-cost-input cost-input"
   onkeydown="handleCostkeydown(event)
   " >
 
   <button onclick="
    calculateTotal();
-     ">calculator</button>
+     " class="calculate-button">calculator</button>
      <p class="js-total-cost"></p>
+
+     </body>
   <script>
 
 function handleCostkeydown(event){
   if (event.key === 'Enter'){
     calcuateTotal();
-} 
+} }
     function calculateTotal() {
     const inputElement = document.querySelector('.js-cost-input');
    let cost = Number(inputElement.value);
@@ -54,30 +74,31 @@ function handleCostkeydown(event){
        document.querySelector('.js-total-cost')
        .innerHTML = `$${cost}`;
     }
-    console.log(document.querySelector('button').innerHTML)
-    document.querySelector('button')
-    .innerHTML = 'changed';
-    const buttonElement =document.querySelector('.js-button');
-      console.log(buttonElement);
+  //  console.log(document.querySelector('button').innerHTML)
+   // document.querySelector('button')
+   // .innerHTML = 'changed';
+   // const buttonElement =document.querySelector('.js-button');
+    //  console.log(buttonElement);
 
   function subscribe(){
     const buttonElement = document.querySelector('.js-subscribe-button');
-   if (buttonElement.innerHTML == 'Subscribe'){
+   if (buttonElement.innerHTML === 'Subscribe'){
        buttonElement.innerHTML = 'Subscribed';
-       buttonElement.classList.add
-       ('is-subscribed')
-   }
+       buttonElement.classList.add('is-subscribed');
+   } else {
+    buttonElement.innerHTML = 'Subscribe';
+    buttonElement.classList.remove('is-subscribed');
   }
    
-   console.log(document.title);
+  //  console.log(document.title);
   
-   document.title = 'Bad Boy';
+  //  document.title = 'Bad Boy';
 
-    console.log(document.body);
+  //   console.log(document.body);
     
-   document.body.innerHTML = 'Marvin';
-   document.title = 'Good Boy';
-  
+  //  document.body.innerHTML = 'Marvin';
+  //  document.title = 'Good Boy';
+  }
   </script>
-</body>
+
 </html>
