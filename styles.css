@@ -1,0 +1,38 @@
+body{
+      background-color: rgb(25, 25, 25);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+       color:white;
+
+    }
+    .title{
+      font-size:30px;
+      font-weight:bold;
+    }
+    .img-button{
+      height:50px;
+     background-color:transparent;
+     border:3px solid white;
+     height:120px;
+     width:120px;
+     padding:10px;
+     border-radius:60px;
+     margin-right:10px;
+     cursor:pointer;
+    }
+    .result{
+      font-size:25px;
+      font-weight:bold;
+      margin-top:50px; 
+    }
+    .score{
+      margin-top:60px;
+    }
+    .reset-score-button{
+      background-color:white;
+      border:none;
+      font-size:15px;
+      padding:8px 15px;
+      cursor:pointer;
+    }
