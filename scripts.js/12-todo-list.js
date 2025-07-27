@@ -3,7 +3,7 @@ name:'make dinner',
 dueDate:'2022-05-23'
  } ,{
   name: 'wash dishes',
- dueDate:2022-05-24}
+ dueDate:'2022-05-24'}
  ];
 
   renderTodoList();
@@ -14,16 +14,19 @@ dueDate:'2022-05-23'
 
    for(let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
-    const name = todoObject.name;
-    const dueDate = todoObject.dueDate
-    const html = 
-    `<div>${name}</div>
+    //const name = todoObject.name;
+    //const dueDate = todoObject.dueDate;
+    const {name, dueDate} = todoObject;
+    const html = `
+    <p>
+     <div>${name}</div>
      <div>${dueDate}</div> 
      <button onclick="
         todoList.splice(${i},1);
         renderTodoList();
-     >Delete</button>
-     `;
+     ">Delete</button>
+     </p>
+     `; 
     todoListHTML+= html;
    }
    //console.log(todoListHTML);
