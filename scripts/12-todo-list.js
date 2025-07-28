@@ -6,7 +6,7 @@ dueDate:'2022-05-23'
  dueDate:'2022-05-24'}
  ];
 
-  renderTodoList();
+ // renderTodoList();
 
 
   function renderTodoList(){
@@ -14,9 +14,8 @@ dueDate:'2022-05-23'
 
    for(let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
-    //const name = todoObject.name;
-    //const dueDate = todoObject.dueDate;
-    const {name, dueDate} = todoObject;
+    const name = todoObject.name;
+    const dueDate = todoObject.dueDate;
     const html = `
     <p>
      <div>${name}</div>
@@ -48,7 +47,7 @@ dueDate:'2022-05-23'
         name : name,
       dueDate:dueDate
  });
-     // console.log(todoList);
+    // console.log(todoList);
 
 
       inputElement.value = '';
