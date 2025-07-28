@@ -8,6 +8,7 @@
     <body>
       
     <script>
+      /*
     function greeting() {
       console.log('Hello'); 
     }
@@ -38,7 +39,17 @@
     }
     run(function() {
       console.log('Hello4');
-    });
+    });*/
+
+     setTimeout(function() {
+       console.log('timeOut');
+       console.log('timeOut2');
+     },4000);
+     console.log('next line');
+
+     setInterval(function() {
+       console.log('interval');
+     }, 6000); 
     </script>
 
     </body>
