@@ -6,8 +6,12 @@
       <title>Advanced Functions</title>
     </head>
     <body>
-      
+      <button onclick="greeting()" class="js-greeting-button">click</button>
     <script>
+
+      document.querySelector('.js-greeting-button').addEventListener('click', function() {
+        console.log('Hello');
+      });
       /*
     function greeting() {
       console.log('Hello'); 
@@ -50,17 +54,46 @@
      setInterval(function() {
        console.log('interval');
      }, 6000); */
-
+/*
       [
         'make dinner',
         'wash dishes',
         'wash clothes'
-      ].forEach(function(value,index){
+      ].forEach((value,index)=>{
+        if (value === 'wash dishes') {
+          return;
+        //} else {
+        //  console.log('not washing dishes');
+        }
+
         console.log(index);
         console.log(value); 
       });
 
+       const regularFunction = function() {
+        console.log('Hello');
+        return 5;
+       };
+     const arrowFunction = () =>{
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
 
+      const oneParam  = (param) => {
+        console.log(param + 1);
+        return 5;
+      };
+
+       const oneline = () => 4+5;
+       console.log(oneline());
+
+       const object3 = {
+        method:() => {
+        
+        };*/
+
+      
 
     </script>
 
