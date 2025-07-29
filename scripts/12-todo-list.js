@@ -15,13 +15,15 @@ dueDate:'2022-05-23'
     todoList.forEach( (todoObject, index) => {
       const name = todoObject.name;
     const dueDate = todoObject.dueDate;
+
+
     const html = `
      <div>${name}</div>
      <div>${dueDate}</div> 
      <button onclick="
         todoList.splice(${index}, 1);
         renderTodoList();
-     " class="delete-todo-button">Delete</button>
+     " class="delete-todo-button js-delete-todo-button">Delete</button>
      `; 
 
     todoListHTML+= html;
@@ -31,7 +33,13 @@ dueDate:'2022-05-23'
 
      document.querySelector('.js-todo-list')
       .innerHTML = todoListHTML;
+  document.querySelector('.js-delete-todo-list-grid')
   }
+
+   document.querySelectorAll('.js-add-todo-button')
+    .addEventListener('click', () => {
+    addTodo();
+    }); 
 
  function addTodo(){
     const inputElement = document

@@ -9,8 +9,18 @@
       <button onclick="greeting()" class="js-greeting-button">click</button>
     <script>
 
-      document.querySelector('.js-greeting-button').addEventListener('click', function() {
-        console.log('Hello');
+      const buttonElement = document.querySelector(
+        '.js-greeting-button');
+     
+        const eventListner = () => {
+        console.log('click'); 
+        };
+      buttonElement .addEventListener('click', eventListner);   
+
+      buttonElement .removeEventListener('click', eventListner);
+      
+      buttonElement .addEventListener('click', () => {
+        console.log('click2'); 
       });
       /*
     function greeting() {

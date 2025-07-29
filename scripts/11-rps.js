@@ -1,14 +1,15 @@
 // Initialize score if it doesn't exist in localStorage
 let score = JSON.parse(localStorage.getItem('score')) || {
+
   wins: 0,
   losses: 0,
   ties: 0
 };
-
+  
  updateScoreElement();
 
-
-
+let isAutoplay = false;
+let intervalId;
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
