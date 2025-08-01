@@ -1,4 +1,4 @@
-// Initialize score if it doesn't exist in localStorage
+ // Initialize score if it doesn't exist in localStorage
 let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
@@ -10,10 +10,10 @@ let isAutoPlaying = false;
  let intervalId;
 
 
- //let isAutoPlaying = false;  
- //let intervalId;
 
-function autoPlay() {
+
+function autoPlay()
+ {
   if (!isAutoPlaying) {
   intervalId = setInterval(()=>{
       const playerMove = pickComputerMove();
@@ -96,8 +96,10 @@ function playGame(playerMove) {
     
  document.querySelector('.js-result').innerHTML = result;
 
-document.querySelector('.js-move').innerHTML = `You <img src="images/${playerMove}.jpeg" class="img-button">
- <img src="images/${computerMove}.jpeg" class="img-button"> Computer </p>`;
+document.querySelector('.js-move').innerHTML = `You
+ <img src="images/${playerMove}.jpeg" class="img-button">
+ <img src="images/${computerMove}
+ .jpeg" class="img-button"> Computer </p>`;
 
   
 }

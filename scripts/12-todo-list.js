@@ -12,7 +12,7 @@ dueDate:'2022-05-23'
   function renderTodoList(){
     let todoListHTML ='';
 
-    todoList.forEach( (todoObject, index) => {
+    todoList.forEach((todoObject, index) => {
       const name = todoObject.name;
     const dueDate = todoObject.dueDate;
 
@@ -20,14 +20,21 @@ dueDate:'2022-05-23'
     const html = `
      <div>${name}</div>
      <div>${dueDate}</div> 
-     <button onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
-     " class="delete-todo-button js-delete-todo-button">Delete</button>
+     <button 
+     class="delete-todo-button js-delete-todo-button">Delete</button>
      `; 
 
     todoListHTML+= html;
-    });
+
+    document.querySelectorAll('.js-delete-todo-button')
+       .forEach((deleteButton,index) => {
+        deleteButton.addEventListener('click',() =>{
+            todoList.splice(index, 1);
+        renderTodoList();
+
+        });
+       
+y    });
   
    //console.log(todoListHTML);
 
@@ -40,6 +47,8 @@ dueDate:'2022-05-23'
     .addEventListener('click', () => {
     addTodo();
     }); 
+ 
+
 
  function addTodo(){
     const inputElement = document

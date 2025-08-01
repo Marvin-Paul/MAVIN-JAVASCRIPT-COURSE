@@ -13,11 +13,11 @@ body{
     .img-button{
       height:50px;
      background-color:transparent;
-     border:3px solid white;
+     border: 0.1px solid white;
      height:120px;
      width:120px;
-     padding:10px;
-     border-radius:60px;
+     padding:0px;
+     border-radius:80px;
      margin-right:10px;
      cursor:pointer;
     }

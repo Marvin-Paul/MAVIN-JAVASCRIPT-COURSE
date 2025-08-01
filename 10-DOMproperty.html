@@ -18,7 +18,7 @@
   <button onclick="
    calculateTotal();
      ">calculator</button>
-     <p class="js-total-cost"></p>
+     <p class="js-total-cost"> </p>
   <script>
 
 function handleCostkeydown(event){
@@ -36,10 +36,10 @@ function handleCostkeydown(event){
        .innerHTML = `$${cost}`;
     }
     console.log(document.querySelector('button').innerHTML)
-    document.querySelector('button')
-    .innerHTML = 'changed';
+   document.querySelector('button')
+   .innerHTML = 'changed';
     const buttonElement =document.querySelector('.js-button');
-      console.log(buttonElement);
+    //  console.log(buttonElement);
 
  
    /*
@@ -51,7 +51,7 @@ function handleCostkeydown(event){
    document.body.innerHTML = 'Marvin';
    document.title = 'Good Boy';
    */
-   
+  }
   </script>
 </body>
 </html>
