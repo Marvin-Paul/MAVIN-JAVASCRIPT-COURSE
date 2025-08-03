@@ -7,15 +7,24 @@
   <link rel="stylesheet" href="del/STYLE/todo-list.css">
 </head>
 <body>
-  <p>Todo List</p>
-  <div class="todo-input-grid">
-  <input placeholder="Todo name" 
-  class="js-name-input name-input">
-  <input type="date" placeholder="Due date" class="js-due-date-input due-date-input">
-  <button
-     class="add-todo-button 
-     js-add-todo-button">Add</button>
- <div class="js-todo-list-grid todo-list-grid"></div>  
+   <div class="container">
+    <h1>Todo List</h1>
+    
+    <div class="todo-input-grid">
+      <input type="text" placeholder="Todo name" class="js-name-input name-input">
+      <input type="date" placeholder="Due date" class="js-due-date-input due-date-input">
+      <button class="add-todo-button js-add-todo-button">Add Task</button>
+    </div>
+    
+    <div class="header">
+      <h2>Your Tasks</h2>
+      <div class="count js-todo-count">0 tasks</div>
+    </div>
+    
+    <div class="js-todo-list-grid todo-list-grid">
+      <!-- Todo items will be rendered here -->
+    </div>
+  </div>
   <script src="scripts\12-todo-list.js"></script>
 </body>
 </html>
