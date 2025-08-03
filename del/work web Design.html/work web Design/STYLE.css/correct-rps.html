@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+        
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: #FFD700;
+        }
+        
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .score-item {
+            padding: 10px 20px;
+            border-radius: 8px;
+            min-width: 120px;
+        }
+        
+        .wins { background: linear-gradient(to right, #2ecc71, #27ae60); }
+        .losses { background: linear-gradient(to right, #e74c3c, #c0392b); }
+        .ties { background: linear-gradient(to right, #3498db, #2980b9); }
+        
+        .moves-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .move {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 200px;
+            margin: 10px;
+        }
+        
+        .move-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+        
+        .move-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 10px auto;
+            background: white;
+        }
+        
+        .result {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 60px;
+            color: #FFD700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-rock {
+            background: linear-gradient(to right, #8e44ad, #9b59b6);
+            color: white;
+        }
+        
+        .btn-paper {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+        }
+        
+        .btn-scissors {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+            color: white;
+        }
+        
+        .btn-auto {
+            background: linear-gradient(to right, #f39c12, #e67e22);
+            color: white;
+        }
+        
+        .btn-reset {
+            background: linear-gradient(to right, #7f8c8d, #95a5a6);
+            color: white;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ddd;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .key {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 0 3px;
+        }
+        
+        @media (max-width: 600px) {
+            .moves-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="score-board">
+            <div class="score-item wins">
+                <div>Wins</div>
+                <div class="js-wins">0</div>
+            </div>
+            <div class="score-item losses">
+                <div>Losses</div>
+                <div class="js-losses">0</div>
+            </div>
+            <div class="score-item ties">
+                <div>Ties</div>
+                <div class="js-ties">0</div>
+            </div>
+        </div>
+        
+        <div class="result js-result">Make your move!</div>
+        
+        <div class="moves-container">
+            <div class="move">
+                <div class="move-title">You</div>
+                <img src="images/ROCK.jpeg" alt="Rock" class="move-image js-player-move">
+            </div>
+            <div class="move">
+                <div class="move-title">Computer</div>
+                <img src="images/PPR.jpeg"  alt="Paper"class="move-image js-computer-move">
+            </div>
+            <div class="move">
+                <div class="move-title">Computer</div>
+                <img src="images/SCISSORS.jpeg"  alt="Scissors" class="move-image js-computer-move">
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn btn-rock js-rock-button">Rock (R)</button>
+            <button class="btn btn-paper js-paper-button">Paper (P)</button>
+            <button class="btn btn-scissors js-scissors-button">Scissors (S)</button>
+            <button class="btn btn-auto js-auto-button">Auto Play</button>
+            <button class="btn btn-reset js-reset-button">Reset Score</button>
+        </div>
+        
+        <div class="instructions">
+            <p>Press <span class="key">R</span> for Rock, <span class="key">P</span> for Paper, 
+            <span class="key">S</span> for Scissors</p>
+            <p>Click "Auto Play" to have the computer play for you</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize score if it doesn't exist in localStorage
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        };
+
+        updateScoreElement();
+        let isAutoPlaying = false;
+        let intervalId;
+
+        // Image sources
+        const imageSources = {
+            rock: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300',
+            paper: 'https://images.unsplash.com/photo-1603484477859-abe6a73f9366?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300',
+            scissors: 'https://images.unsplash.com/photo-1585139846463-064389219e93?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300',
+            question: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=300'
+        };
+
+        // Set initial images
+        document.querySelector('.js-player-move').src = imageSources.question;
+        document.querySelector('.js-computer-move').src = imageSources.question;
+
+        function autoPlay() {
+            if (!isAutoPlaying) {
+                intervalId = setInterval(() => {
+                    const moves = ['rock', 'paper', 'scissors'];
+                    const randomMove = moves[Math.floor(Math.random() * 3)];
+                    playGame(randomMove);
+                }, 1000);
+                isAutoPlaying = true;
+                document.querySelector('.js-auto-button').textContent = 'Stop Auto Play';
+            } else {
+                clearInterval(intervalId);
+                isAutoPlaying = false;
+                document.querySelector('.js-auto-button').textContent = 'Auto Play';
+            }
+        }
+
+        // Event listeners for buttons
+        document.querySelector('.js-rock-button').addEventListener('click', () => {
+            playGame('rock');
+        });
+
+        document.querySelector('.js-paper-button').addEventListener('click', () => {
+            playGame('paper');
+        });
+
+        document.querySelector('.js-scissors-button').addEventListener('click', () => {
+            playGame('scissors');
+        });
+
+        document.querySelector('.js-auto-button').addEventListener('click', () => {
+            autoPlay();
+        });
+
+        document.querySelector('.js-reset-button').addEventListener('click', () => {
+            resetScore();
+        });
+
+        // Keyboard event listener
+        document.body.addEventListener('keydown', (event) => {
+            if (event.key === 'r' || event.key === 'R') {
+                playGame('rock');
+            } else if (event.key === 'p' || event.key === 'P') {
+                playGame('paper');
+            } else if (event.key === 's' || event.key === 'S') {
+                playGame('scissors');
+            } else if (event.key === 'a' || event.key === 'A') {
+                autoPlay();
+            } else if (event.key === 'Backspace') {
+                resetScore();
+            }
+        });
+
+        function playGame(playerMove) {
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            if (playerMove === 'scissors') {
+                if (computerMove === 'rock') {
+                    result = 'You lose!';
+                } else if (computerMove === 'paper') {
+                    result = 'You win!';
+                } else if (computerMove === 'scissors') {
+                    result = 'Tie!';
+                }
+            } else if (playerMove === 'paper') {
+                if (computerMove === 'rock') {
+                    result = 'You win!';
+                } else if (computerMove === 'paper') {
+                    result = 'Tie!';
+                } else if (computerMove === 'scissors') {
+                    result = 'You lose!';
+                }
+            } else if (playerMove === 'rock') {
+                if (computerMove === 'rock') {
+                    result = 'Tie!';
+                } else if (computerMove === 'paper') {
+                    result = 'You lose!';
+                } else if (computerMove === 'scissors') {
+                    result = 'You win!';
+                }
+            }
+
+            // Update score
+            if (result === 'You win!') {
+                score.wins += 1;
+            } else if (result === 'You lose!') {
+                score.losses += 1;
+            } else if (result === 'Tie!') {
+                score.ties += 1;
+            }
+
+            // Save to localStorage
+            localStorage.setItem('score', JSON.stringify(score));
+
+            // Update UI
+            updateScoreElement();
+            document.querySelector('.js-result').innerHTML = result;
+            document.querySelector('.js-player-move').src = imageSources[playerMove];
+            document.querySelector('.js-computer-move').src = imageSources[computerMove];
+        }
+
+        function resetScore() {
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+            localStorage.setItem('score', JSON.stringify(score));
+            updateScoreElement();
+            document.querySelector('.js-result').innerHTML = 'Score has been reset!';
+            document.querySelector('.js-player-move').src = imageSources.question;
+            document.querySelector('.js-computer-move').src = imageSources.question;
+        }
+
+        function updateScoreElement() {
+            document.querySelector('.js-wins').textContent = score.wins;
+            document.querySelector('.js-losses').textContent = score.losses;
+            document.querySelector('.js-ties').textContent = score.ties;
+        }
+
+        function pickComputerMove() {
+            const randomNumber = Math.random();
+            if (randomNumber < 1/3) {
+                return 'rock';
+            } else if (randomNumber < 2/3) {
+                return 'paper';
+            } else {
+                return 'scissors';
+            }
+        }
+    </script>
+</body>
+</html>

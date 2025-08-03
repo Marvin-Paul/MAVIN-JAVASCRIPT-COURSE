@@ -8,26 +8,55 @@
 
 </head>
 <body> 
-<p class="title">Rock--Paper--Scissor--Game</p>
-
-<button class="js-rock-button"><img src="images/ROCK.jpeg" alt="Rock" class="img-button move-icon"></button>
-<button class="js-paper-button"><img src="images/PPR.jpeg" alt="Paper" class="img-button move-icon"></button>
-<button class="js-scissor-button"><img src="images/SCISSORS.jpeg" alt="Scissor" class="img-button move-icon"></button>
-
-<p class="js-result result"></p>
-
-<p class="js-move"> </p>
-
-<p class="js-score score "> </p>
-<button onclick="
-    score.wins= 0;
-    score.losses= 0;
-    score.ties= 0;
-localStorage.removeItem('score');
-updateScoreElement();" class="reset-score-button">Reset-Score</button>
-<button class="auto-play-button" onclick="
-autoPlay();
-"> Auto play</button>
+<div class="container">
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="score-board">
+            <div class="score-item wins">
+                <div>Wins</div>
+                <div class="js-wins">0</div>
+            </div>
+            <div class="score-item losses">
+                <div>Losses</div>
+                <div class="js-losses">0</div>
+            </div>
+            <div class="score-item ties">
+                <div>Ties</div>
+                <div class="js-ties">0</div>
+            </div>
+        </div>
+        
+        <div class="result js-result">Make your move!</div>
+        
+        <div class="moves-container">
+            <div class="move">
+                <div class="move-title">You</div>
+                <img src="images/ROCK.jpeg" alt="Rock" class="move-image js-player-move">
+            </div>
+            <div class="move">
+                <div class="move-title">Computer</div>
+                <img src="images/PPR.jpeg"  alt="Paper"class="move-image js-computer-move">
+            </div>
+            <div class="move">
+                <div class="move-title">Computer</div>
+                <img src="images/SCISSORS.jpeg"  alt="Scissors" class="move-image js-computer-move">
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn btn-rock js-rock-button">Rock </button>
+            <button class="btn btn-paper js-paper-button">Paper </button>
+            <button class="btn btn-scissors js-scissors-button">Scissors </button>
+            <button class="btn btn-auto js-auto-button">Auto Play</button>
+            <button class="btn btn-reset js-reset-button">Reset Score</button>
+        </div>
+        
+        <div class="instructions">
+            <p>Press <span class="key">R</span> for Rock, <span class="key">P</span> for Paper, 
+            <span class="key">S</span> for Scissors</p>
+            <p>Click "Auto Play" to have the computer play for you</p>
+        </div>
+    </div>
 
 
 </body>
