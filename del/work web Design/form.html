@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: cyan;
+    }
+    h2 {
+        color: #333;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    input[type="submit"] {
+        margin-top: 15px;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+   <h2>University Registration Form</h2>
+    <form action="#" method="post">
+        <!-- Surname -->
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <!-- Given Name -->
+        <label for="givenname">Given Name:</label>
+        <input type="text" id="givenname" name="givenname" required><br><br>
+
+        <!-- Email -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Contact -->
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" name="contact" required><br><br>
+
+        <!-- Age Selection using Radio Buttons -->
+        <p>Age Range:</p>
+        <input type="radio" id="age1" name="age" value="18-25" required>
+        <label for="age1">18-25</label><br>
+        <input type="radio" id="age2" name="age" value="26-35">
+        <label for="age2">26-35</label><br>
+        <input type="radio" id="age3" name="age" value="36+">
+        <label for="age3">36+</label><br><br>
+
+        <!-- Courses Offered using Checkboxes -->
+        <p>Courses Offered:</p>
+        <input type="checkbox" id="course1" name="courses" value="Mathematics">
+        <label for="course1">Mathematics</label><br>
+        <input type="checkbox" id="course2" name="courses" value="Computer Science">
+        <label for="course2">Computer Science</label><br>
+        <input type="checkbox" id="course3" name="courses" value="Physics">
+        <label for="course3">Physics</label><br>
+        <input type="checkbox" id="course4" name="courses" value="Literature">
+        <label for="course4">Literature</label><br><br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <!-- Text Area -->
+        <label for="comments">Additional Information:</label><br>
+        <textarea id="comments" name="comments" rows="5" cols="40" placeholder="Enter any additional information here..."></textarea><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

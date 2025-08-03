@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6 Section Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        #header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main Section */
+        #main {
+            display: flex;
+        }
+
+        #main-left {
+            width: 60%;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        #main-right {
+            width: 40%;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        /* Footer */
+        #footer {
+            display: flex;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer-left, .footer-right {
+            width: 50%;
+            padding: 10px;
+        }
+
+        .footer-left {
+            background-color: #444;
+        }
+
+        .footer-right {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1st Div: Header -->
+    <div id="header">
+        <h1>Welcome to My Website</h1>
+    </div>
+
+    <!-- 2nd & 3rd Divs: Main Content -->
+    <div id="main">
+        <div id="main-left">
+            <h2>Main Content (60%)</h2>
+            <p>This section takes up 60% of the width.</p>
+        </div>
+        <div id="main-right">
+            <h2>Sidebar (40%)</h2>
+            <p>This section takes up 40% of the width.</p>
+        </div>
+    </div>
+
+    <!-- Footer: 2 Equal Containers -->
+    <div id="footer">
+        <div class="footer-left">
+            <h3>Footer Left (50%)</h3>
+            <p>Some footer content here.</p>
+        </div>
+        <div class="footer-right">
+            <h3>Footer Right (50%)</h3>
+            <p>Some more footer content here.</p>
+        </div>
+    </div>
+
+</body>
+</html>
